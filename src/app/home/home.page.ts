@@ -10,7 +10,6 @@ export class HomePage {
   valor1!: number;
   valor2!: number;
   operacao!: number;
-  resultadoAnterior!: number;
   constructor() {}
 
   adicionarNumero(valor: string) {
@@ -28,15 +27,10 @@ export class HomePage {
   }
 
   adicionarOperacao(valor: number) {
-    if (this.valor1 === null) {
-      this.valor1 = +this.visor;
-    } else {
-      this.calcular();
-    }
     this.operacao = valor;
-    /*this.valor1 = Number(this.visor); outra maneira de transformar string em number */
-    this.visor = '0';
-    //this.zerar();
+    this.valor1 = +this.visor;
+    /*this.valor1 = Number(this.visor);  Outra maneira de transformar string em number*/
+    this.zerar();
   }
 
   porcentagem() {
@@ -50,26 +44,30 @@ export class HomePage {
   }
 
   calcular() {
-    this.valor2 = +this.visor;
-    switch (this.operacao) {
-      case 0: {
-        this.visor = '' + (this.valor1 + this.valor2);
-        break;
-      }
-      case 1: {
-        this.visor = '' + (this.valor1 - this.valor2);
-        break;
-      }
+    if (this.valor1 !== -1 && this.operacao !== -1) {
+      this.valor2 = +this.visor;
+      switch (this.operacao) {
+        case 0: {
+          this.visor = '' + (this.valor1 + this.valor2);
+          break;
+        }
 
-      case 2: {
-        this.visor = '' + this.valor1 * this.valor2;
-        break;
-      }
+        case 1: {
+          this.visor = '' + (this.valor1 - this.valor2);
+          break;
+        }
 
-      case 3: {
-        this.visor = '' + this.valor1 / this.valor2;
-        break;
+        case 2: {
+          this.visor = '' + this.valor1 * this.valor2;
+          break;
+        }
+
+        case 3: {
+          this.visor = '' + this.valor1 / this.valor2;
+          break;
+        }
       }
+      this.operacao = -1;
     }
   }
 
