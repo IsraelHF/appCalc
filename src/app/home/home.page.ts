@@ -38,7 +38,7 @@ export class HomePage {
     this.visor = '' + this.valor1 / 100;
   }
 
-  negativo() {
+  trocaSinal() {
     this.valor1 = +this.visor;
     this.visor = '' + this.valor1 * -1;
   }
