@@ -39,8 +39,7 @@ export class HomePage {
   }
 
   trocaSinal() {
-    this.valor1 = +this.visor;
-    this.visor = '' + this.valor1 * -1;
+    this.visor = '' + Number(this.visor) * -1;
   }
 
   calcular() {
