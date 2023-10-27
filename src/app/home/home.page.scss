@@ -12,6 +12,18 @@ ion-input{
   margin-right: 7%;
 }
 
+ion-button{
+  width: 20%;
+  height: 100%;
+  margin: 0 auto;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  font-size: 1.5em;
+  --background: #333333;
+  --background-activated: #333333;
+  --border-radius: 50em;
+}
+
 ion-fab-button{
   width: 20%;
   margin: 0 auto;
@@ -21,6 +33,8 @@ ion-fab-button{
   --background: #333333;
   --background-activated: #333333;
 }
+
+
 
 .operacao{
   --background: #ff9f0c;
